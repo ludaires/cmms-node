@@ -1,0 +1,12 @@
+version: '3'
+services:
+  invoicing_db:
+    image: postgres:9.5
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: maintenance-node-dev
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: secret
+    volumes:
+      - .docker/postgresql/data:/var/lib/postgresql/data
